@@ -166,8 +166,13 @@ class ControllerPaymentVelocityCreditCard extends Controller {
      * install method call at the time of install the module and create custom table.
      */
     public function install() {
-        $this->db->query("
-                        CREATE TABLE IF NOT EXISTS `" . DB_PREFIX . "velocity_transactions` (
+        
+        $field = $this->db->query("show tables like '%velocity%'");
+        
+        if ($field->row == NULL) {
+            
+            $this->db->query("
+                        CREATE TABLE `" . DB_PREFIX . "velocity_transactions` (
                           `id`                 int(11)      NOT NULL,
                           `transaction_id`     varchar(255) NOT NULL,
                           `transaction_status` varchar(100) NOT NULL,
@@ -176,6 +181,24 @@ class ControllerPaymentVelocityCreditCard extends Controller {
                           `response_obj`       text         NOT NULL,
                           PRIMARY KEY (id)
                         ) DEFAULT COLLATE=utf8_general_ci;");
+            
+        } else {
+            
+            foreach($field->row as $key => $val) {
+                $tablename = $val;
+            }
+            $field     = $this->db->query("SHOW COLUMNS FROM " . $tablename);
+
+            $count     = 0;
+            foreach ($field->rows as $key => $val) {
+                if ($val['Field'] == 'request_obj'){
+                    $count += 1;
+                }
+            }
+            if ($count == 0) {
+                $this->db->query("ALTER TABLE " . $tablename . " add request_obj text");
+            }
+        }
         
     } 
     
