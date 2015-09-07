@@ -21,3 +21,5 @@
     For Refund option at admin side first open sales->orders from left menu and all order display here then click on view order icon and show the differnent tabs select action tab shows Velocity Refund Option for refund amount directly from gateway.
     
     For update/uninstall the velocity module of Opencart click on 'Extensions' Menu option then click on 'payments' select module and edit for change the configuration and for uninstallation remove the module but code not remove from sever.
+	
+	4.  We have saved the raw request and response objects in &lt;prefix&gt;_velocity_transactions table.
