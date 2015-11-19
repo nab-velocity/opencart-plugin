@@ -1,11 +1,11 @@
 Velocity OpenCart Module Installation Documentation 
 
-1.	Download velocity Opencart Module by clicking on Download zip button on the right bottom of this page.
-
-2.	Configuration Requirement: Opencart site Version 2.0.2.0 or above version must be required for our velocity payment module installation.
+1.	Configuration Requirement: Opencart site Version 2.0.2.0 or above version must be required for our velocity payment module installation.
+	
+2.	Download velocity Opencart Module by clicking on Download zip button on the right bottom of this page.
 
 3.	Installation & Configuration of Module from Admin Panel:
-	  Unzip module code and upload on your server as per the directory structure matched with your Opencart dircetory structure, after upload the module code on server open browser login admin panel and click on 'Extensions' Menu option then click on 'payments' our velocity payment module listed here.
+	  Unzip module code and open "velocity_opencart" folder and upload code on your server as per the directory structure matched with your Opencart dircetory structure, after upload the module code on server open browser login admin panel and click on 'Extensions' Menu option then click on 'payments' our velocity payment module listed here.
 
 Show the list of all payment module listed after succesfull upload your velocity module is also listed.
 
